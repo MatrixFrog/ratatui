@@ -40,10 +40,10 @@ macro_rules! text {
     () => {
         $crate::ratatui_core::text::Text::default()
     };
-    ($line:expr; $n:expr) => {
+    ($line:expr_2021; $n:expr_2021) => {
         $crate::ratatui_core::text::Text::from(vec![$line.into(); $n])
     };
-    ($($line:expr),+ $(,)?) => {{
+    ($($line:expr_2021),+ $(,)?) => {{
         $crate::ratatui_core::text::Text::from(vec![
         $(
             $line.into(),

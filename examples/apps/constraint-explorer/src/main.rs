@@ -305,7 +305,7 @@ impl App {
     /// A bar like `<----- 80 px (gap: 2 px) ----->`
     ///
     /// Only shows the gap when spacing is not zero
-    fn axis(&self, width: u16) -> impl Widget {
+    fn axis(&self, width: u16) -> impl Widget + use<> {
         let label = if self.spacing != 0 {
             format!("{} px (gap: {} px)", width, self.spacing)
         } else {

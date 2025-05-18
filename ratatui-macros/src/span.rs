@@ -99,19 +99,19 @@ macro_rules! span {
     ($string:literal, $($arg:tt)*) => {
         $crate::ratatui_core::text::Span::raw(format!($string, $($arg)*))
     };
-    ($expr:expr) => {
+    ($expr:expr_2021) => {
         $crate::ratatui_core::text::Span::raw(format!("{}", $expr))
     };
-    ($style:expr, $($arg:tt)*) => {
+    ($style:expr_2021, $($arg:tt)*) => {
         compile_error!("first parameter must be a formatting specifier followed by a comma OR a `Style` followed by a semicolon")
     };
-    ($style:expr; $string:literal) => {
+    ($style:expr_2021; $string:literal) => {
         $crate::ratatui_core::text::Span::styled(format!($string), $style)
     };
-    ($style:expr; $string:literal, $($arg:tt)*) => {
+    ($style:expr_2021; $string:literal, $($arg:tt)*) => {
         $crate::ratatui_core::text::Span::styled(format!($string, $($arg)*), $style)
     };
-    ($style:expr; $expr:expr) => {
+    ($style:expr_2021; $expr:expr_2021) => {
         $crate::ratatui_core::text::Span::styled(format!("{}", $expr), $style)
     };
 }

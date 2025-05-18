@@ -51,10 +51,10 @@ macro_rules! row {
     () => {
         ::ratatui_widgets::table::Row::default()
     };
-    ($cell:expr; $n:expr) => {
+    ($cell:expr_2021; $n:expr_2021) => {
         ::ratatui_widgets::table::Row::new(vec![::ratatui_widgets::table::Cell::from($cell); $n])
     };
-    ($($cell:expr),+ $(,)?) => {{
+    ($($cell:expr_2021),+ $(,)?) => {{
         ::ratatui_widgets::table::Row::new(vec![
         $(
             ::ratatui_widgets::table::Cell::from($cell),

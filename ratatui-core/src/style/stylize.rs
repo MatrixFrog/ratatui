@@ -112,7 +112,7 @@ impl fmt::Debug for ColorDebug {
 /// }
 /// ```
 macro_rules! color {
-    ( $variant:expr, $color:ident(), $on_color:ident() -> $ty:ty ) => {
+    ( $variant:expr_2021, $color:ident(), $on_color:ident() -> $ty:ty ) => {
         #[doc = concat!("Sets the foreground color to [`", stringify!($color), "`](", stringify!($variant), ").")]
         #[must_use = concat!("`", stringify!($color), "` returns the modified style without modifying the original")]
         fn $color(self) -> $ty {
@@ -126,7 +126,7 @@ macro_rules! color {
         }
     };
 
-    (pub const $variant:expr, $color:ident(), $on_color:ident() -> $ty:ty ) => {
+    (pub const $variant:expr_2021, $color:ident(), $on_color:ident() -> $ty:ty ) => {
         #[doc = concat!("Sets the foreground color to [`", stringify!($color), "`](", stringify!($variant), ").")]
         #[must_use = concat!("`", stringify!($color), "` returns the modified style without modifying the original")]
         pub const fn $color(self) -> $ty {
@@ -162,7 +162,7 @@ macro_rules! color {
 /// }
 /// ```
 macro_rules! modifier {
-    ( $variant:expr, $modifier:ident(), $not_modifier:ident() -> $ty:ty ) => {
+    ( $variant:expr_2021, $modifier:ident(), $not_modifier:ident() -> $ty:ty ) => {
         #[doc = concat!("Adds the [`", stringify!($modifier), "`](", stringify!($variant), ") modifier.")]
         #[must_use = concat!("`", stringify!($modifier), "` returns the modified style without modifying the original")]
         fn $modifier(self) -> $ty {
@@ -176,7 +176,7 @@ macro_rules! modifier {
         }
     };
 
-    (pub const $variant:expr, $modifier:ident(), $not_modifier:ident() -> $ty:ty ) => {
+    (pub const $variant:expr_2021, $modifier:ident(), $not_modifier:ident() -> $ty:ty ) => {
         #[doc = concat!("Adds the [`", stringify!($modifier), "`](", stringify!($variant), ") modifier.")]
         #[must_use = concat!("`", stringify!($modifier), "` returns the modified style without modifying the original")]
         pub const fn $modifier(self) -> $ty {

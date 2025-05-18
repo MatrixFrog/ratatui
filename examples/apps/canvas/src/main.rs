@@ -220,7 +220,7 @@ impl App {
             .y_bounds([10.0, 110.0])
     }
 
-    fn boxes_canvas(&self, area: Rect) -> impl Widget {
+    fn boxes_canvas(&self, area: Rect) -> impl Widget + use<> {
         let left = 0.0;
         let right = f64::from(area.width);
         let bottom = 0.0;

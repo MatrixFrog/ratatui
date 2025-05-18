@@ -6,7 +6,7 @@
 #[deprecated = "use `assert_eq!(&actual, &expected)`"]
 #[macro_export]
 macro_rules! assert_buffer_eq {
-    ($actual_expr:expr, $expected_expr:expr) => {
+    ($actual_expr:expr_2021, $expected_expr:expr_2021) => {
         match (&$actual_expr, &$expected_expr) {
             (actual, expected) => {
                 assert!(

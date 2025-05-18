@@ -526,7 +526,7 @@ impl Scrollbar<'_> {
         &self,
         area: Rect,
         state: &ScrollbarState,
-    ) -> impl Iterator<Item = Option<(&str, Style)>> {
+    ) -> impl Iterator<Item = Option<(&str, Style)>> + use<'_> {
         let (track_start_len, thumb_len, track_end_len) = self.part_lengths(area, state);
 
         let begin = self.begin_symbol.map(|s| Some((s, self.begin_style)));

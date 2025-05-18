@@ -22,19 +22,19 @@ macro_rules! constraint {
     (== $token:tt %) => {
         $crate::ratatui_core::layout::Constraint::Percentage($token)
     };
-    (>= $expr:expr) => {
+    (>= $expr:expr_2021) => {
         $crate::ratatui_core::layout::Constraint::Min($expr)
     };
-    (<= $expr:expr) => {
+    (<= $expr:expr_2021) => {
         $crate::ratatui_core::layout::Constraint::Max($expr)
     };
     (== $num:tt / $denom:tt) => {
         $crate::ratatui_core::layout::Constraint::Ratio($num as u32, $denom as u32)
     };
-    (== $expr:expr) => {
+    (== $expr:expr_2021) => {
         $crate::ratatui_core::layout::Constraint::Length($expr)
     };
-    (*= $expr:expr) => {
+    (*= $expr:expr_2021) => {
         $crate::ratatui_core::layout::Constraint::Fill($expr)
     };
 }
@@ -122,7 +122,7 @@ macro_rules! constraints {
     //                                          partial tokens into a single Constraint expression.
     // [$crate::constraint!(...) ; $count]  -> Generates an array of constraints by repeating the
     //                                          parsed constraint count number of times.
-    ([ ; $count:expr , ] -> ($($partial:tt)*) []) => {
+    ([ ; $count:expr_2021 , ] -> ($($partial:tt)*) []) => {
         [$crate::constraint!($($partial)*); $count]
     };
 
